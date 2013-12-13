@@ -1,6 +1,17 @@
 # Fortune
 
-TODO: Write a gem description
+This gem allows you to count the various statistical parameters and values.
+
+Main features of the library are:
+* Work with probabilities
+* Random selection of events from the list
+* Calculation of odds
+* The transition from odds to probability and back
+* Combinatorics (permutation, accommodation, combinations)
+
+## Requirements
+
+ruby 1.9 or higher
 
 ## Installation
 
@@ -18,7 +29,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+#### For Hash
+
+Recalculation of the key values to probability, assuming that P = 1
+{:a => 1, :b => 2, :c => 3}.to_p => {:a=>0.1666, :b=>0.3333, :c=>0.5}
+
+Select random key by value weights
+{:a => 1, :b => 2, :c => 3}.choose => return :c with 50% probability, :a ~ 16%, :b ~ 33%
+
+#### Probability
+
 
 ## Contributing
 
@@ -27,3 +47,7 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Authors
+
+Personal blog author: [Malykh Oleg](http://es0.ru/) - blog in russian
