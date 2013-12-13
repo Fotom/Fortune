@@ -46,6 +46,9 @@ Choose from set by value weights
 
 #### Probability
 
+#### Addon Class Methods
+
+`Math.factorial`
 
 ## Contributing
 
