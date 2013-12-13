@@ -32,12 +32,15 @@ Or install it yourself as:
 #### For Hash
 
 Recalculation of the key values to probability, assuming that P = 1
+
     {:a => 1, :b => 2, :c => 3}.to_p => {:a=>0.1666, :b=>0.3333, :c=>0.5}
 
 Select random key by value weights
+
     {:a => 1, :b => 2, :c => 3}.choose => :c with 50% probability, :a ~ 16%, :b ~ 33%
 
 Choose from set by value weights
+
     {[:a, :b, :c] => 1, [:d] => 3}.choose_set => :d with 75% probability
 
 
