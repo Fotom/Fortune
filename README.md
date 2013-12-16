@@ -108,18 +108,63 @@ odds.to_lose
 
 ### Combinatorics
 
-#### Accomodation
+#### Accomodation (A)
 
 Permutation without repetition with select k elements.
-example: 20 different elements and you need select 5 of them (how many ways of selection exists?)
-  elements is ordered ([a,b,c] != [b,c,a])
+
+Example: 20 different elements and you need select 5 of them (how many ways of selection exists?). Elements is ordered ([a,b,c] != [b,c,a])
 ```ruby
 Fortune::A.calc(:elements => 10, :select => 5) # => 30240
+```
+
+#### Permutation
+
+##### Permutation without repetition (Pn)
+
+Example: the amount of distributions of the four teams in four places
+
+```ruby
+Fortune::Pn.calc(4) # => 24
+```
+other examples
+```ruby
+Fortune::Pn.calc(:elements => 5) # => 120
+Fortune::Pn.calc(:elements => 5, :select => 2) # => 20
+```
+
+##### Permutation with repetition (Pnr)
+
+Example: how many different options you can dress up if there are three sweaters two skirts and two hats (3*2*2, if all thing is equal 3, then: Pn_repetition(:n => 3, :k => 3), k - element groups, n - elements count in group)
+
+```ruby
+Fortune::Pn_repetition(:n => 3, :k => 3) # => 27
+is equal to
+Fortune::Pnr(:groups => 3, :elements => 3) # => 27 (human like variant)
+```
+
+#### Combinations
+
+##### Combinations without repetition (C)
+
+Example: 10 different elements (students) and you need select 5 of them (how many ways of selection exists?). Elements does not ordered ([a,b,c] == [b,c,a])
+
+```ruby
+Fortune::C.calc(:elements => 10, :select => 5) # => 252
+```
+
+##### Combination with repetition (Cr)
+
+```ruby
+Fortune::C_repetition.calc(:elements => 10, :select => 5) # => 2002
+same as
+Fortune::Cr.calc(:elements => 10, :select => 5) # => 2002
 ```
 
 #### Addon Class Methods
 
 `Math.factorial(n)`
+
+`Event` class - under development 
 
 ## Contributing
 
